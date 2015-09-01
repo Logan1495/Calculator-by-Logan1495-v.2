@@ -48,13 +48,13 @@ public class CalculatoInterface extends JFrame {
 	JButton bE = new JButton("=");
 	JButton bD = new JButton("/");
 	JMenuBar menuBar = new JMenuBar();
-	JMenu spravka = new JMenu("\u0421\u043F\u0440\u0430\u0432\u043A\u0430");
-	JMenuItem oProgramme = new JMenuItem("\u041E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0435");
+	JMenu spravka = new JMenu("Menu");
+	JMenuItem oProgramme = new JMenuItem("About program");
 	
 	
 	public CalculatoInterface() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CalculatoInterface.class.getResource("/javax/swing/plaf/metal/icons/ocean/computer.gif")));
-		setTitle("\u041A\u0430\u043B\u044C\u043A\u0443\u043B\u044F\u0442\u043E\u0440 by Logan1495");
+		setTitle("Calculator by Logan1495");
 		getContentPane().setLayout(null);
 		textPane.setEditable(false);
 		textPane.setToolTipText("textPane.setText(\"1123\");");
@@ -281,7 +281,7 @@ public class CalculatoInterface extends JFrame {
 				}
 				else if(n2 != 0) {
 					if(x11== true) {
-						if(n1== 0){ JOptionPane.showMessageDialog(null, "Деление на ноль невозможно"); return;}
+						if(n1== 0){ JOptionPane.showMessageDialog(null, "Division by zero is impossible."); return;}
 						n2 = n2 / n1;
 						n1 = 0;
 						textPaneLastNumber.setText(Double.toString(n2).replace(".0", "") + "/");
@@ -329,7 +329,7 @@ public class CalculatoInterface extends JFrame {
 				String str = textPane.getText();
 				if(str.contains(".") == true){
 					//JOptionPane.showMessageDialog(null, "wat?2.");
-					if(n1== 0){ JOptionPane.showMessageDialog(null, "В числе уже есть запятая."); return;}
+					if(n1== 0){ JOptionPane.showMessageDialog(null, "Among already have a virgule."); return;}
 				}
 				else if(str.contains(".") == false) {
 					str = str + ".";
@@ -338,7 +338,7 @@ public class CalculatoInterface extends JFrame {
 				}
 			}
 			else if(e.getSource()== oProgramme) {
-				JOptionPane.showMessageDialog(null, "Калькулятор v0.1 by Logan1495.\nCreated on Java machine.","О программе",1);
+				JOptionPane.showMessageDialog(null, "Calculator v0.1 by Logan1495.\nCreated on Java machine.","About program",1);
 			}
 		}
 	}
@@ -352,7 +352,7 @@ public class CalculatoInterface extends JFrame {
 			if(b.length()<16){
 			textPane.setText(b + Integer.toString(a));
 			}
-			else JOptionPane.showMessageDialog(null, "Достигнут лимит цифр."); 
+			else JOptionPane.showMessageDialog(null, "Limit reached of numbers."); 
 		}
 		n1 = Double.parseDouble(textPane.getText());
 	}
