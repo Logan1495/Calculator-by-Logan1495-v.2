@@ -1,0 +1,17 @@
+package Calculator;
+
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		CalculatoInterface c = new CalculatoInterface();
+		c.setSize(310, 430);
+		c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		c.setResizable(false);
+		c.setLocationRelativeTo(null);
+		c.setVisible(true);
+
+	}
+
+}
